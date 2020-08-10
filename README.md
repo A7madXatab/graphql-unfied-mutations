@@ -1,5 +1,19 @@
 ## a set of utility functions to make your graphql mutations have the same signature.
 
+# Installation
+
+using npm
+
+```
+npm install graphql-unified-mutations
+```
+
+or yarn
+
+```
+yarn add graphql-unified-mutations
+```
+
 # usage
 
 
