@@ -129,6 +129,19 @@ type Mutation {
   ${crudOf('user')}
 }
 ```
+will yeild the following mutations
+
+```
+type Mutation {
+  createUser(data: User!): User!
+
+  updateUser(id: ID!, data: UserUpdate!): Boolean!
+
+  deleteUser(id:ID!): Boolean!
+}
+
+```
+
 
 the casing dose not matter since the function will **CamelCase** the types according to Graphql standards.
 
