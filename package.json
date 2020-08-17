@@ -1,6 +1,6 @@
 {
   "name": "graphql-unified-mutation",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "a set of graphql methods that work for the front and and backend, making the apis predictable, and preventing graphql mutations to clutter the UI code",
   "main": "index.js",
   "scripts": {

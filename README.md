@@ -20,7 +20,7 @@ yarn add graphql-unified-mutations
 ```
 //type-defs.js
 
-import { type } from "./graphql-unified-mutations";
+import { type } from "graphql-unified-mutations";
 
 const typeDefs = gql`
 
@@ -102,7 +102,37 @@ input CurrencyUpdate {
     name: 'String!',
     multiplier: 'Float!',
 }
+
 ```
+## Creating mutations for the type
+you dont have to manually write the mutations for each type, that's cumbersome and no one wants to do it,
+let the package do the heavy lifting for you, here is how
+
+having this call to  `type`
+
+```
+ ${type('User', {
+    email: 'String!',
+    fullName: 'String!',
+    password: 'String!',
+    role: 'String!',
+  }, true)} // t
+```
+to get the mutations for this type, you can use the `crudOf` function.
+
+```
+//type-defs.
+
+import { crudOf } from "graphql-unified-mutations"
+
+type Mutation {
+  ${crudOf('user')}
+}
+```
+
+the casing dose not matter since the function will **CamelCase** the types according to Graphql standards.
+
+
 ## using in the front end code
 
 to use the graphql endpoints created by this library, use the `crudSchemaOf` function.
